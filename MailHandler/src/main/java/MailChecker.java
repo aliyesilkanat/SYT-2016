@@ -71,13 +71,15 @@ public class MailChecker {
 			for (int i = 0, n = messages.length; i < n; i++) {
 				Message message = messages[i];
 				emails.add(new Email(message.getSubject(), message.getFrom()[0]
-						.toString(), getTextFromMessage(message)));
+						.toString().split("<")[1].replace(">", ""), getTextFromMessage(message)));
 
 			}
 
 			// close the store and folder objectsM
 			emailFolder.close(false);
 			store.close();
+
+		  
 
 			return emails;
 

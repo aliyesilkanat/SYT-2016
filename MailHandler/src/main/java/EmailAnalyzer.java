@@ -4,19 +4,9 @@ import java.util.regex.Pattern;
 
 public class EmailAnalyzer {
 
-	public static void main(String[] args) {
-		// ArrayList<Email> check = new MailChecker().check("pop.gmail.com",
-		// "pop3", "syt.izel.ali@gmail.com", "sytharika");
-		// for (Email email : check) {
-		//
-		// System.out.println(email.getText());
-		// }
+	
 
-		System.out.println(getStudents("Merhaba Hocam SYT dersinin 2.proje grup üyeleri aşağıdaki gibidir 5110000000-Adı Soyadı 5110000001-Adı Soyadı 5110000002-Adı Soyadı"));
-       
-	}
-
-	public static ArrayList<Student> getStudents(String Text) {
+	public  ArrayList<Student> getStudents(String Text) {
 
 		ArrayList<Student> group = new ArrayList<Student>();
 

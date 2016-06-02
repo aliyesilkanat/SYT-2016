@@ -9,19 +9,27 @@ public class MailSender {
 
     private static String USER_NAME = "syt.izel.ali@gmail.com";  // GMail user name (just the part before "@gmail.com")
     private static String PASSWORD = "sytharika"; // GMail password
-    private static String RECIPIENT = "izel.cavusoglu@gmail.com";
+   // private static String RECIPIENT = "izel.cavusoglu@gmail.com";
 
-    public static void main(String[] args) {
-        String from = USER_NAME;
+//    public static void main(String[] args) {
+//        String from = USER_NAME;
+//        String pass = PASSWORD;
+//        String[] to = { RECIPIENT }; // list of recipient email addresses
+//        String subject = "Java send mail example";
+//        String body = "Welcome to JavaMail!";
+//
+//        sendFromGMail(from, pass, to, subject, body);
+//    }
+    
+    public void sendEmail(String recipient, String body) {
+    	String from = USER_NAME;
         String pass = PASSWORD;
-        String[] to = { RECIPIENT }; // list of recipient email addresses
-        String subject = "Java send mail example";
-        String body = "Welcome to JavaMail!";
+        String[] to = { recipient };
+        String subject = "SYT Projesi";
+    	sendFromGMail(from, pass, to, subject, body);
+	}
 
-        sendFromGMail(from, pass, to, subject, body);
-    }
-
-    private static void sendFromGMail(String from, String pass, String[] to, String subject, String body) {
+    private  void sendFromGMail(String from, String pass, String[] to, String subject, String body) {
         Properties props = System.getProperties();
         String host = "smtp.gmail.com";
         props.put("mail.smtp.starttls.enable", "true");
