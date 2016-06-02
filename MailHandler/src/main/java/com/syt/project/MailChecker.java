@@ -1,3 +1,5 @@
+package com.syt.project;
+
 import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -11,14 +13,15 @@ import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 
 public class MailChecker {
-	
-	
-	
+	private static final Logger logger = LogManager
+			.getLogger(MailChecker.class);
 
-	private  String getTextFromMessage(Message message) throws Exception {
+	private String getTextFromMessage(Message message) throws Exception {
 		if (message.isMimeType("text/plain")) {
 			return message.getContent().toString();
 		} else if (message.isMimeType("multipart/*")) {
@@ -64,14 +67,17 @@ public class MailChecker {
 
 			// retrieve the messages from the folder in an array and print it
 			Message[] messages = emailFolder.getMessages();
-			System.out.println("messages.length---" + messages.length);
 
+			if (getLogger().isTraceEnabled()) {
+				getLogger().trace("messages.length---" + messages.length);
+			}
 			ArrayList<Email> emails = new ArrayList<Email>();
 
 			for (int i = 0, n = messages.length; i < n; i++) {
 				Message message = messages[i];
 				emails.add(new Email(message.getSubject(), message.getFrom()[0]
-						.toString().split("<")[1].replace(">", ""), getTextFromMessage(message)));
+						.toString().split("<")[1].replace(">", ""),
+						getTextFromMessage(message)));
 
 			}
 
@@ -79,20 +85,16 @@ public class MailChecker {
 			emailFolder.close(false);
 			store.close();
 
-		  
-
 			return emails;
 
-		} catch (NoSuchProviderException e) {
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
-			e.printStackTrace();
+			getLogger().error("Cannot read mails", e);
 		}
 		return null;
 	}
 
-
+	public static Logger getLogger() {
+		return logger;
+	}
 
 }

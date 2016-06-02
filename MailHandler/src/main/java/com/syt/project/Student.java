@@ -1,3 +1,4 @@
+package com.syt.project;
 public class Student {
 
 	public Student(String id, String name) {

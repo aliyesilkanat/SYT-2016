@@ -1,3 +1,4 @@
+package com.syt.project;
 import java.util.ArrayList;
 
 public class Main {

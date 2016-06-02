@@ -1,8 +1,13 @@
+package com.syt.project;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import com.syt.project.Email;
+import com.syt.project.MailChecker;
+import com.syt.project.MailSender;
 
 public class TestMailChecker {
 

@@ -1,3 +1,4 @@
+package com.syt.project;
 public class Email {
 
 	private String Subject;
@@ -8,7 +9,6 @@ public class Email {
 		this.Subject = Subject;
 		this.From = From;
 		this.Text = Text;
-
 	}
 
 	public String getSubject() {
