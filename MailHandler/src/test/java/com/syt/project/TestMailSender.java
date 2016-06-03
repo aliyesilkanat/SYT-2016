@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.syt.project.MailSender;
+import com.syt.project.email.MailSender;
 
 
 public class TestMailSender {

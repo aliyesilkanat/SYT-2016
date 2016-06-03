@@ -1,4 +1,4 @@
-package com.syt.project;
+package com.syt.project.email;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.syt.project.Student;
 
 public class EmailAnalyzer {
 

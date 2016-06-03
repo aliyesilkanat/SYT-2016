@@ -3,7 +3,7 @@ public class Student {
 
 	public Student(String id, String name) {
 		this.name = name;
-		this.name = id;
+		this.id = id;
 	}
 
 	private String id;

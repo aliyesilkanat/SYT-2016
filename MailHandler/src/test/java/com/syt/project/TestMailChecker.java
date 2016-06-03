@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import com.syt.project.Email;
-import com.syt.project.MailChecker;
-import com.syt.project.MailSender;
+import com.syt.project.email.Email;
+import com.syt.project.email.MailChecker;
+import com.syt.project.email.MailSender;
 
 public class TestMailChecker {
 

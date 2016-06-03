@@ -1,14 +1,11 @@
-package com.syt.project;
+package com.syt.project.email;
 
-import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.mail.BodyPart;
 import javax.mail.Folder;
 import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Store;
 import javax.mail.internet.MimeMultipart;

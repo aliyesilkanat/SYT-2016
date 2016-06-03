@@ -1,4 +1,4 @@
-package com.syt.project;
+package com.syt.project.email;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.syt.project;
+package com.syt.project.email;
 public class Email {
 
 	private String Subject;
