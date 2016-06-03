@@ -6,7 +6,7 @@
 
 <h:head>
 
-	<meta charset="utf-8" />
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="" />
@@ -17,7 +17,48 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
 </h:head>
 
-<body>
-<table class="table table-condensed"> <thead> <tr> <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td colspan="2">Larry the Bird</td> <td>@twitter</td> </tr> </tbody> </table>
-</body>
+<h:body>
+
+	<h:form>
+		<ui:repeat value="#{students.groupList}" var="group">
+
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>İsim</th>
+						<th>Numara</th>
+						<th>Puan</th>
+					</tr>
+				</thead>
+				<tbody>
+					<ui:repeat value="#{group.studentsList}" var="student"
+						varStatus="studentVarStatus">
+
+						<tr>
+							<th scope="row">#{studentVarStatus.index}</th>
+							<td><h:inputText value="#{student.name}" /></td>
+							<td><h:inputText value="#{student.id}" /></td>
+							<td><h:inputText value="#{student.point}" /></td>
+						</tr>
+						<!-- 					<tr> -->
+						<!-- 						<th scope="row">2</th> -->
+						<!-- 						<td>Jacob</td> -->
+						<!-- 						<td>Thornton</td> -->
+						<!-- 						<td>@fat</td> -->
+						<!-- 					</tr> -->
+						<!-- 					<tr> -->
+						<!-- 						<th scope="row">3</th> -->
+						<!-- 						<td>Larry the Bird</td> -->
+						<!-- 						<td>Larry the Bird</td> -->
+						<!-- 						<td><h:inputText value="das" /></td> -->
+						<!-- 					</tr> -->
+					</ui:repeat>
+				</tbody>
+			</table>
+		</ui:repeat>
+		<h:commandButton action="#{students.change}" value="Change"
+			class="btn btn-success" />
+	</h:form>
+</h:body>
 </html>

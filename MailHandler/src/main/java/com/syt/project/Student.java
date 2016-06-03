@@ -1,4 +1,12 @@
 package com.syt.project;
+
+import java.util.Arrays;
+
+import org.bson.Document;
+
+import com.mongodb.client.MongoCursor;
+import com.syt.project.data.MongoConnector;
+
 public class Student {
 
 	public Student(String id, String name) {
