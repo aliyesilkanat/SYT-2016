@@ -10,24 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 public class MailSender {
 	private static final Logger logger = LogManager.getLogger(MailSender.class);
-	private static String USER_NAME = "syt.izel.ali@gmail.com"; // GMail user
-																// name (just
-																// the part
-																// before
-																// "@gmail.com")
-	private static String PASSWORD = "sytharika"; // GMail password
-
-	// private static String RECIPIENT = "izel.cavusoglu@gmail.com";
-
-	// public static void main(String[] args) {
-	// String from = USER_NAME;
-	// String pass = PASSWORD;
-	// String[] to = { RECIPIENT }; // list of recipient email addresses
-	// String subject = "Java send mail example";
-	// String body = "Welcome to JavaMail!";
-	//
-	// sendFromGMail(from, pass, to, subject, body);
-	// }
+	private static final String USER_NAME = "syt.izel.ali@gmail.com"; // GMail
+																		// user
+	private static final String PASSWORD = "sytharika"; // GMail password
 
 	public void sendEmail(String recipient, String body) {
 		String from = USER_NAME;
@@ -48,7 +33,7 @@ public class MailSender {
 		props.put("mail.smtp.port", "587");
 		props.put("mail.smtp.auth", "true");
 
-		Session session = Session.getDefaultInstance(props);
+		Session session = Session.getInstance(props);
 		MimeMessage message = new MimeMessage(session);
 
 		try {

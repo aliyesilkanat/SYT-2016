@@ -54,7 +54,7 @@ public class MailChecker {
 			properties.put("mail.pop3.host", host);
 			properties.put("mail.pop3.port", "995");
 			properties.put("mail.pop3.starttls.enable", "true");
-			Session emailSession = Session.getDefaultInstance(properties);
+			Session emailSession = Session.getInstance(properties);
 
 			// create the POP3 store object and connect with the pop server
 			Store store = emailSession.getStore("pop3s");
@@ -84,7 +84,7 @@ public class MailChecker {
 			// close the store and folder objectsM
 			emailFolder.close(false);
 			store.close();
-
+			
 			return emails;
 
 		} catch (Exception e) {

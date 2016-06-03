@@ -10,7 +10,7 @@ public class TestMailSender {
 	
 	@Test
 	public void sas() throws Exception {
-		new MailSender().sendEmail("izel.cavusoglu@gmail.com", "asdsadasdsd");
+		new MailSender().sendEmail("aliyesilkanat@gmail.com", "asdsadasdsd");
 	}
 
 }
