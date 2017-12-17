@@ -6,10 +6,10 @@ import com.mongodb.client.MongoDatabase;
 
 public class MongoConnector {
 
-	private static final String MONGOLAB_PORT = "31551";
-	private static final String MONGOLAB_IP = "ds031551.mlab.com";
-	private static final String MONGOLAB_PASSWORD = "syt2016";
-	private static final String MONGOLAB_USER = "admin";
+	private static final String MONGOLAB_PORT = ;
+	private static final String MONGOLAB_IP = "
+	private static final String MONGOLAB_PASSWORD = ;
+	private static final String MONGOLAB_USER = ;
 	private static MongoClient client = null;
 
 	public static MongoDatabase getDatabase() {
