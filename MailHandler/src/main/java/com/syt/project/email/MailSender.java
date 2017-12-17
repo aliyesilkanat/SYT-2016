@@ -10,9 +10,9 @@ import org.apache.logging.log4j.Logger;
 
 public class MailSender {
 	private static final Logger logger = LogManager.getLogger(MailSender.class);
-	private static final String USER_NAME = "syt.izel.ali@gmail.com"; // GMail
+	private static final String USER_NAME = // GMail
 																		// user
-	private static final String PASSWORD = "sytharika"; // GMail password
+	private static final String PASSWORD =  // GMail password
 
 	public void sendEmail(String recipient, String body) {
 		String from = USER_NAME;
